@@ -16,7 +16,6 @@ func main() {
 	if port = os.Getenv("PORT"); len(port) == 0 {
 		port = DEFAULT_PORT
 	}
-
 	http.Handle("/", http.FileServer(http.Dir("static")))
 	log.Printf("Starting app on :%+v\n", port)
 	http.ListenAndServe(":"+port, nil)
